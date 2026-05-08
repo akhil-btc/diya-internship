@@ -5,7 +5,7 @@ from rich.console import Console
 import sys
 def get_weather():
     docs = (
-        "https://api.open-meteo.com/v1/forecast"
+        "https://api.open-meteo.com/v1/forecast/THIS_DOES_NOTEXIST"
         "?latitude=32.8140"
         "&longitude=-96.9489"
         "&current=temperature_2m"
@@ -28,14 +28,20 @@ def get_quote():
             print("Website not found.")
             return None
         data = response.json()
-        return data[0]["q"]  # Return the quote text
+        data = []
+        if len(data) > 0:
+            return data[0]["q"]  # Return the quote text
+        else:
+            return None
     except requests.exceptions.RequestException as e:
         print("An error occurred:", e)
-        sys.exit()
+        return None
 if __name__ == "__main__":
-    temperature = get_weather()
+    temperature = get_weather() #temp = None
     quote = get_quote()
-    if temperature  < 18:
+    if temperature is None:
+        rich.print("[dim]weather unavailable[/dim]", quote) 
+    elif temperature  < 18:
         rich.print("[bold blue]stay warm[/bold blue]", quote) 
     elif temperature > 28:
         rich.print("[bold red]stay hydrated[/bold red]", quote)

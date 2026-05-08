@@ -6,7 +6,7 @@ if len(sys.argv) < 2:
 username = sys.argv[1]
 website = "https://api.github.com/users/" + username
 try:
-    response = requests.get(website)
+    response = requests.get(website, timeout=10)
 except requests.exceptions.RequestException as e:
     print("An error occurred:", e)
     sys.exit()
