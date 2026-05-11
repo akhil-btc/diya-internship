@@ -20,13 +20,13 @@ if API_KEY is None:
 info = {
     "country": "us",
     "category": "technology",
-    "pageSize": 5, #asked chatgpt how to pull only five, (3/6)
-    "apiKey": API_KEY
-    }
+    "pageSize": 5 #asked chatgpt how to pull only five, (3/6)
+}
+headers = {"X-Api-Key": API_KEY}
 # gets API data (2/6)
 #4, 5 remaining
 try:
-    response = requests.get(URL, params=info, timeout=10)
+    response = requests.get(URL, params=info, headers = headers, timeout=10)
     if response.status_code == 429: # 6.3/3 
         console.print("[bold red]Error:[/bold red] [bold blue] Rate limit exceeded. [/bold blue]")
         sys.exit() #using because no point in contining
