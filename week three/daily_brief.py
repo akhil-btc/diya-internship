@@ -1,6 +1,7 @@
 import os
 import requests
 import dotenv
+import json
 import sys
 from rich.console import Console
 from rich.panel import Panel
@@ -38,13 +39,14 @@ try:
         articles_formatted = []
         for article in articles:
             title = article.get("title", "No Title")
-            description = article.get("source", "No Source")
+            source = (article.get("source") or {}).get("name", "Unknown source")
             url = article.get("url", "No URL")
         #4 and 5
-            articles_formatted.append(f"[bold blue]{title}[/bold blue]\n[bold green]Source: {description}[/bold green]\n[link={url}]Read more[/link]")
+            articles_formatted.append(f"[bold blue]{title}[/bold blue]\n[bold green]Source: {source}[/bold green]\n[link={url}]Read more[/link]")
         formatted = "\n".join(articles_formatted)
         panel = Panel(formatted, title="Today's Tech")
         console.print(panel)
+        #print(json.dumps(article.get("source"), indent=2))
 
 
 except requests.exceptions.RequestException as e:
