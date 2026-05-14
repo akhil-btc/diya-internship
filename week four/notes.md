@@ -1,0 +1,2 @@
+# all three times, the chatbot started by abbreviating and explaining what LLM stand for.
+# while the information itself did not defer much, the grammar portions of it did, using variousn sentence structures.
