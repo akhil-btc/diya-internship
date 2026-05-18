@@ -1,0 +1,22 @@
+#Un-be-liev-able
+#Concept 1 - Tokens -Tokens are the unit of everything. When you pay for an LLM API, you pay per token. When the model 'thinks,' it thinks one token at a time.
+
+#Concept 2 - Context Window - If you want the model to remember something across many turns, re-state it. Don't trust short-term memory."
+
+
+Concept 3 - next token prediction - The model is rolling a weighted dice at every token. Temperature controls how weird the dice is.
+
+Concept 4 - Hallucination - not true, but model give  the answer confidently.
+
+what;s the weather today
+
+
+
+Three rules from today. Burn them in.
+One: When you need facts, verify them yourself. Don't trust the model on dates, numbers, names, quotes, or anything specific.
+Two: When you can — give the model the facts in the prompt. If you want it to summarise a news article, paste the article. The model can't hallucinate something that's already in its context.
+Three: Confidence is not evidence. The model sounds confident about everything. Including the wrong things. Especially the wrong things. Your eyes are the only quality check.
+
+
+
+
