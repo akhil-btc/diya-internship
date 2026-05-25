@@ -9,6 +9,17 @@ after a while, i was able to ask it who the face of Full Squad Gaming, a youtube
 
 
 problems:
-an AI that searches the internet to find the part two to videos, articles, etc. by searching the transcripts for keywords relating to what is being searched for.
-an ai that when given a link and a question, finds where in that link the question is answered, and summarizes the entire article.
+-an AI that searches the internet to find the part two to videos, articles, etc. by searching the transcripts for keywords relating to what is being searched for. (youtube)
+-an ai that when given a link and a question, finds where in that link the question is answered, and summarizes the entire article. 
+(script/article in a file
+ questions to AI
+Ai should look in a article) - RAG
 an AI that calculates what grade you would need on future assignments to get a desired average for a period of time. it takes into account the way the assignments are weighted, what type of GPA a specified school gives.
+
+
+1. Problem 2  - SOP (Essay) - Help we with college essay
+
+2. Problem 1 - strech/v2
+
+3.Problem 3 - the grade calculator
+

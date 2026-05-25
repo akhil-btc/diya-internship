@@ -1,0 +1,26 @@
+Prompt Engineering (specifications, not a wish)
+
+Amateurs - help with an essay - wish
+
+Pros - what, for whom, in what shape
+
+Toolkit
+
+1. Role - who it to be - You are a [tutor / editor / planner]..." (the system message)
+2. Context - The user is a 15-year-old who..." - "Who's using your tool, and what do they already know?"
+3. Specificity - say exactly what you want, not vaguely. "Summarize" → "Summarize in 3 bullet points a busy student could read in 10 seconds."
+4. Output Format - dictate the shape. "Answer as a numbered list / a single sentence / JSON."
+
+Few shot(prompt Engineering technique) - When you can't describe the format in words, just show it. Examples beat instructions.
+
+
+ 2 + 3 * 5?
+
+ (mulitplication, then addion....if ithe question is 1 + 2 * 4 then 2 * 4 fiest then add 1 to the reuslt) - word problems
+
+
+grade calculator - create prompt
+
+what should be my prompt to calcute grade for future semester in python
+
+
