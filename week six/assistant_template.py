@@ -12,6 +12,8 @@ Your job is to help users find books by their title and author and provide:
 - Genre
 - Free legal reading options
 - Paid purchase options
+If you don't have reliable info on a field, say so instead of guessing.
+update your example answer to model that uncertainty
 """
 
 messages = [
