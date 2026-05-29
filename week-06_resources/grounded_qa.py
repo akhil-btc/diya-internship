@@ -1,8 +1,6 @@
 """
 grounded_qa.py  —  Week 6 reference (Thursday exercise)
 =======================================================
-MENTOR REFERENCE. The single most important reference of the program,
-because it's the brain of her capstone in miniature.
 
 THE TECHNIQUE — "grounding"
 ---------------------------
@@ -17,9 +15,7 @@ the model to answer ONLY from that text. Two consequences:
     to say so. That kills hallucination at the root.
 
 This is the entire idea behind every "ChatGPT with my docs" / "AI search"
-/ RAG product on earth. Diya's link-summarizer capstone is exactly this
-pattern, just with a URL fetcher bolted onto the front. Week 7 adds the
-URL fetcher. THIS week proves the brain works.
+/ RAG product on earth.
 """
 
 import os

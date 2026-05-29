@@ -1,15 +1,10 @@
 """
 essay_feedback.py  —  Week 6 reference (Thursday exercise)
 ==========================================================
-MENTOR REFERENCE. This is the brain of Diya's actual capstone — a
-college essay practice tool that gives her feedback on her drafts
-against a rubric, without writing the essay for her.
 
 THE NEW TECHNIQUE — "prompting to EVALUATE, not GENERATE"
 ---------------------------------------------------------
-Every prompt she's written so far has asked the model to *produce*
-something (a summary, a study-buddy answer, a name for an ice-cream
-shop). This prompt asks it to *judge* something — to apply a rubric to
+This prompt asks it to *judge* something — to apply a rubric to
 text the user supplied. That's a fundamentally different kind of
 cognitive work, and it unlocks a whole class of tools (essay feedback,
 code review, study-quiz grading).
@@ -31,7 +26,7 @@ The three moves that make this work:
 
 WHAT GOOD LOOKS LIKE
 --------------------
-She runs this on a REAL draft of her own — ideally a quick stab at one
+ideally a quick stab at one
 of the Common App prompts — and writes 3 sentences on (a) whether the
 feedback was useful, (b) where it was generic, and (c) what she'd
 sharpen in the rubric to make next round better. The tool itself isn't
