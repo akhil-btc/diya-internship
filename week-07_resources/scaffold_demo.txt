@@ -1,0 +1,17 @@
+calculator vs spreadsheet
+calculator - operations - 2 + 3 + 4 = 9
+
+spreadsheet - 2 + 4 + 4 = 10
+
+
+5 moves
+
+a.  MENU - pick it from a list. don't rewrite
+b. File based input - save it in a file and read from it.
+c. functions,not a flat script - pick_prompt(), get_feedbak(), read_draft(), compare_rounds()
+d. iteration loop
+e. score extration + comparision - 
+
+
+What does your tool do, who's it for, and why is the rubric the soul of it?
+
