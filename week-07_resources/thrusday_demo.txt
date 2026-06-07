@@ -1,0 +1,45 @@
+
+python script to add 2 numbers - 
+user's input
+
+a = int(input("1st number))
+b = int((input("2nd number)))
+return a+b
+
+
+# input 2 , 3, 5
+
+# akhil's input a, b
+# akhil's input "", &
+solution 
+1. add validation
+2. try/except
+
+MANTRA: FAIL LOUDLY, RECOVER GRACEFULLY
+
+Pattern 1
+one.txt, one word OR 12000  - API - rate limit error
+100
+validation
+
+
+Pattern 2
+Groq API
+
+101 times,
+connection error,
+API is down - 
+try/except
+
+
+Pattern 3:
+extract_scores() - {} - i model breaks
+compare_rounds() - print empty table - 
+if it is empty - coudln't parse scores - your rubric's OUTPUT FORMAT section probably needs to be stricter
+
+
+regular expressions - comp science term
+
+pattern matching
+
+asdflkasdfkl123123102 - (/+d)
