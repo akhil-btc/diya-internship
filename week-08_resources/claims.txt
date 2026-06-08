@@ -1,0 +1,20 @@
+Last week 
+Revise, not append (restructure)
+
+restructure (cut a claim - replace it with a scene)
+I enjoy being challenged because challenges force me to grow - 
+
+STAR appraoch
+
+S - situation
+T - task
+A - action
+R - result
+
+1.=======  -> ---------------------
+2. welcome banner
+
+3. A "what does each score mean?" help message — one short paragraph you can write once, displayed if the user types help at the menu.
+
+
+
