@@ -95,6 +95,29 @@ ABSOLUTE RULES — DO NOT BREAK:
 
 
 """
+# ---------- CANONICAL CRITERION NAMES ----------
+# Any extracted criterion name (case/punctuation/wording varies between
+# runs) gets mapped to ONE of these six canonical buckets. That way round
+# 1 and round 2 always compare cleanly even if the model wobbles.
+CANONICAL_CRITERIA = [
+    ("specificity",        "Specificity"),
+    ("voice",              "Voice"),
+    ("structure",          "Structure"),
+    ("show",               "Show, don't tell"),   # matches show / show, don't tell / show don't tell
+    ("stakes",             "Stakes"),
+    ("grammar",            "Grammar and style"),  # matches grammar / grammar and style / grammar/style
+]
+
+
+def canonicalise(raw_name):
+    """Map a model-produced criterion name to one of the canonical six.
+    Falls back to title-case of the original if no match found, so
+    nothing gets silently dropped."""
+    n = raw_name.lower().strip().rstrip(":").rstrip(",").strip()
+    for keyword, canonical in CANONICAL_CRITERIA:
+        if keyword in n:
+            return canonical
+    return raw_name.strip().title()
 
 
 def load_client():
@@ -110,7 +133,7 @@ def load_client():
 def pick_essay_prompt():
     print("\nWhich essay prompt are you working on?\n")
     for i, (label, _) in enumerate(ESSAY_PROMPTS, 1):
-        print(f"  {i}. {label}")
+        print(f"  {i}. {label}: {_}")
     choice = input("\nEnter number: ").strip()
     if not choice.isdigit() or not (1 <= int(choice) <= len(ESSAY_PROMPTS)):
         print(f"  Pick a number between 1 and {len(ESSAY_PROMPTS)}.")
@@ -182,10 +205,14 @@ def extract_scores(feedback_text):
     """Pull '<criterion>: N/5' patterns. Returns a dict (possibly empty).
     The CALLER checks whether anything was parsed and responds."""
     pattern = re.compile(
-        r"^\s*\d+\.\s*([A-Za-z, '\-]+?):\s*(\d)\s*/\s*5", re.MULTILINE
+        r"^\s*\d+\.\s*(.+?)[\s:]+\s*(\d)\s*/\s*5",
+        re.MULTILINE
     )
-    return {m.group(1).strip(): int(m.group(2))
-            for m in pattern.finditer(feedback_text)}
+    scores = {}
+    for m in pattern.finditer(feedback_text):
+        canonical = canonicalise(m.group(1))
+        scores[canonical] = int(m.group(2))
+    return scores
 
 
 def compare_rounds(r1, r2):
@@ -198,8 +225,8 @@ def compare_rounds(r1, r2):
         return
     print("\nIteration comparison:")
     print(f"  {'Criterion':<22} {'Round 1':>8} {'Round 2':>8}   change")
-    all_keys = set(r1) | set(r2)
-    for k in sorted(all_keys):
+    all_keys = sorted(set(r1) | set(r2))
+    for k in all_keys:
         v1 = r1.get(k, "-")
         v2 = r2.get(k, "-")
         if isinstance(v1, int) and isinstance(v2, int):
